@@ -3,32 +3,369 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Premium Contact</title><script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+<title>AURA | Born Different</title>
+
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
-*{margin:0;padding:0;box-sizing:border-box;font-family:Poppins,sans-serif}body{min-height:100vh;display:flex;justify-content:center;align-items:center;background:linear-gradient(135deg,#4facfe,#6a11cb);padding:20px}.container{width:420px;background:rgba(255,255,255,.15);backdrop-filter:blur(15px);border-radius:20px;padding:30px;box-shadow:0 20px 40px rgba(0,0,0,.3);color:#fff}h2,p{text-align:center}p{margin:0 0 20px}input,textarea{width:100%;padding:14px;margin:10px 0;border:none;border-radius:12px;background:rgba(255,255,255,.2);color:#fff}input::placeholder,textarea::placeholder{color:#eee}button{width:100%;padding:14px;border:none;border-radius:12px;background:#00b4ff;color:#fff;font-weight:600}.g-recaptcha{margin:15px 0}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #050505, #1a1a1a, #050505);
+    color: white;
+    min-height: 100vh;
+    padding: 20px 12px 50px;
+}
+
+/* MAIN CONTAINER */
+.container {
+    max-width: 1050px;
+    margin: auto;
+}
+
+/* HERO */
+.hero {
+    text-align: center;
+    padding: 20px 0 35px;
+}
+
+.logo {
+    width: 220px;
+    max-width: 70%;
+    border-radius: 20px;
+    display: block;
+    margin: auto;
+    box-shadow: 0 15px 45px rgba(0,0,0,0.7);
+}
+
+.brand-name {
+    font-size: 60px;
+    font-weight: bold;
+    letter-spacing: 12px;
+    margin-top: 15px;
+}
+
+.tagline {
+    font-size: 16px;
+    letter-spacing: 6px;
+    color: #ccc;
+}
+
+.red {
+    color: #ff2020;
+}
+
+/* COLLECTION */
+.collection-title {
+    text-align: center;
+    font-size: 36px;
+    margin: 25px 0;
+}
+
+.collection-title span {
+    color: #ff2020;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.product {
+    background: #111;
+    border-radius: 18px;
+    overflow: hidden;
+    border: 1px solid #333;
+    box-shadow: 0 10px 35px rgba(0,0,0,0.5);
+}
+
+.product img {
+    width: 100%;
+    display: block;
+    transition: 0.3s;
+}
+
+.product img:hover {
+    transform: scale(1.03);
+}
+
+.full {
+    grid-column: 1 / -1;
+}
+
+/* CONTACT BOX */
+.contact-box {
+    max-width: 620px;
+    margin: 40px auto 0;
+    background: white;
+    color: black;
+    padding: 30px;
+    border-radius: 22px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+}
+
+.contact-box h2 {
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 8px;
+}
+
+.subtitle {
+    text-align: center;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 16px;
+    margin: 8px 0;
+    border: 1px solid #aaa;
+    border-radius: 8px;
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+}
+
+input:focus,
+textarea:focus {
+    outline: none;
+    border-color: #111;
+}
+
+textarea {
+    height: 130px;
+    resize: vertical;
+}
+
+.address-label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.g-recaptcha {
+    margin: 15px 0;
+}
+
+button {
+    width: 100%;
+    padding: 16px;
+    border: none;
+    border-radius: 8px;
+    background: #111;
+    color: white;
+    font-size: 17px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #ff2020;
+}
+
+.footer {
+    text-align: center;
+    color: #888;
+    margin-top: 25px;
+    font-size: 13px;
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+
+    body {
+        padding: 10px 8px 35px;
+    }
+
+    .brand-name {
+        font-size: 42px;
+        letter-spacing: 7px;
+    }
+
+    .tagline {
+        font-size: 12px;
+        letter-spacing: 3px;
+    }
+
+    .gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .full {
+        grid-column: auto;
+    }
+
+    .contact-box {
+        padding: 20px 14px;
+        border-radius: 18px;
+    }
+
+    .collection-title {
+        font-size: 28px;
+    }
+}
 </style>
 </head>
+
 <body>
 
 <div class="container">
-<h2>📩 Contact Us</h2><p style="text-align:center">We would love to hear from you!</p>
 
-<form action="https://formspree.io/f/mkjwwpve" method="POST" onsubmit="if(grecaptcha.getResponse()===''){alert('Complete reCAPTCHA');return false;}return true;">
+    <!-- AURA HEADER -->
+    <section class="hero">
 
-<input type="text" name="name" placeholder="Your Name" required>
+        <img
+            src="assets/aura-logo.jpg"
+            alt="AURA Logo"
+            class="logo"
+        >
 
-<input type="email" name="email" placeholder="Your Email" required>
+        <h1 class="brand-name">AURA</h1>
 
-<input type="tel" name="phone" placeholder="Your Phone Number">
+        <p class="tagline">
+            BORN <span class="red">DIFFERENT.</span>
+        </p>
 
-<textarea name="message" placeholder="Your Message"></textarea>
+    </section>
 
-<div class="g-recaptcha" data-sitekey="6Ld-GnotAAAAAJkHxczROb6R5SYRviDcihNIt28x"></div><button type="submit">Send Message</button>
 
-</form>
+    <!-- T-SHIRT COLLECTION -->
+    <section>
+
+        <h2 class="collection-title">
+            OUR <span>COLLECTION</span>
+        </h2>
+
+        <div class="gallery">
+
+            <!-- T-shirt collection -->
+            <div class="product full">
+                <img
+                    src="assets/aura-tshirts.jpg"
+                    alt="AURA T-Shirt Collection"
+                >
+            </div>
+
+            <!-- Artwork -->
+            <div class="product">
+                <img
+                    src="assets/aura-art.jpg"
+                    alt="AURA Artwork"
+                >
+            </div>
+
+            <!-- Japan design -->
+            <div class="product">
+                <img
+                    src="assets/aura-japan.jpg"
+                    alt="AURA Design"
+                >
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CONTACT FORM -->
+    <section class="contact-box">
+
+        <h2>📩 Contact Us</h2>
+
+        <p class="subtitle">
+            We would love to hear from you!
+        </p>
+
+        <form
+            action="https://formspree.io/f/mkjwwpve"
+            method="POST"
+            onsubmit="return checkCaptcha();"
+        >
+
+            <input
+                type="text"
+                name="name"
+                placeholder="Your Name"
+                required
+            >
+
+            <input
+                type="email"
+                name="email"
+                placeholder="Your Email"
+                required
+            >
+
+            <input
+                type="tel"
+                name="phone"
+                placeholder="Your Phone Number"
+            >
+
+            <label class="address-label">
+                Delivery Address
+            </label>
+
+            <textarea
+                name="address"
+                placeholder="Enter your full delivery address"
+                required
+            ></textarea>
+
+
+            <!-- reCAPTCHA -->
+            <div
+                class="g-recaptcha"
+                data-sitekey="6LeSx3gtAAAAAB01lGRd3YrhlCOyxCvLDZrezFC-"
+            ></div>
+
+
+            <button type="submit">
+                Send Message
+            </button>
+
+        </form>
+
+    </section>
+
+
+    <div class="footer">
+        © AURA — Born Different.
+    </div>
 
 </div>
+
+
+<script>
+
+function checkCaptcha() {
+
+    var response = grecaptcha.getResponse();
+
+    if (response.length === 0) {
+
+        alert("Please complete the reCAPTCHA.");
+
+        return false;
+    }
+
+    return true;
+}
+
+</script>
 
 </body>
 </html>
